@@ -1,13 +1,14 @@
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
 import { Suspense, useRef, useState } from 'react';
 import { OrbitControls, Environment, Html } from '@react-three/drei';
+
 // Computer setup components with improved details
 import Desk from './components/Desk';
-import Monitor from './components/Monitor';
-import Keyboard from './components/Keyboard';
-import Cpu from './components/Cpu';
 import Chair from './components/Chair';
+import Cpu from './components/Cpu';
 import Mouse from './components/Mouse';
+import Keyboard from './components/Keyboard';
+import Monitor from './components/Monitor';
 
 
 // Main scene component
@@ -33,7 +34,7 @@ const Scene = () => {
       />
       <Environment preset="city" />
       
-      <group position={[0,0,0]} ref={groupRef}>
+      <group ref={groupRef}>
         <Desk />
         <Monitor />
         <Keyboard />
@@ -56,16 +57,18 @@ const Scene = () => {
 };
 
 // Main component
-const App = () => {
+const ComputerSetup3D = () => {
   return (
+  <div className="absolute inset-0 w-full">
     <Canvas
       shadows
-      camera={{ position: [0, 0, 5], fov: 45}}
-      className='absolute inset-0 w-[70%]'
+      camera={{ position: [0, 1, 5]}}
+      className="absolute inset-0 w-[70%]"
     >
       <Scene />
     </Canvas>
+  </div>
   );
 };
 
-export default App;
+export default ComputerSetup3D;
