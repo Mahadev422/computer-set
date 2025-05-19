@@ -34,7 +34,7 @@ const Scene = () => {
       />
       <Environment preset="city" />
       
-      <group ref={groupRef}>
+      <group position={[0,0,-1.3]} ref={groupRef}>
         <Desk />
         <Monitor />
         <Keyboard />
