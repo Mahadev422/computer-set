@@ -8,8 +8,6 @@ An interactive 3D computer desk scene built with **React Three Fiber**, **Three.
 
 ![Preview of 3D Computer Setup](./public/preview.png)
 
-> 📝 Tip: Replace `preview.png` with your own screenshot (see instructions below).
-
 ---
 
 ## ✨ Features
