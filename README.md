@@ -29,5 +29,5 @@ A responsive and interactive 3D computer setup scene built using **React Three F
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/3d-computer-setup.git
-cd 3d-computer-setup
+git clone https://github.com/Mahadev422/computer-set.git
+cd computer-set
