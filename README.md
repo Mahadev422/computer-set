@@ -4,9 +4,9 @@ An interactive 3D computer desk scene built with **React Three Fiber**, **Three.
 
 ---
 
-## 🔮 Preview
+## 🚀 Live Preview
 
-![Preview of 3D Computer Setup](./public/preview.png)
+👉 [Click here to view the live demo](https://mahadev422.github.io/computer-set/)
 
 ---
 
