@@ -30,7 +30,7 @@ const Scene = ({ rotation, zoom }) => {
     <>
       <directionalLight 
         position={[0, 0, 2]} 
-        intensity={1} 
+        intensity={1.5} 
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
@@ -75,7 +75,7 @@ const ComputerSetup3D = () => {
       className="absolute inset-0"
     >
       <Html>
-        <div className='absolute top-[-350px] right-[-250px]'>
+        <div className='absolute -top-[370px] right-[-300px]'>
           <button onClick={() => setZoom(!zoom)} className={`text-3xl ${ !zoom ? 'bg-red-400' : 'bg-green-400'} cursor-pointer p-2 rounded-2xl m-1`}>
             <TbZoomCode />
           </button>
