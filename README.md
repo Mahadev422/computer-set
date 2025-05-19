@@ -1,12 +1,33 @@
-# React + Vite
+# 🖥️ 3D Computer Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive and interactive 3D computer setup scene built using **React Three Fiber**, **Three.js**, and **Tailwind CSS**. This project visually represents a computer desk environment with a monitor, keyboard, mouse, CPU, and chair.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎮 Interactive 3D scene with orbit controls
+- 🌆 Realistic lighting using HDRI environments
+- 💡 Dynamic shadows and lighting
+- 🧩 Modular components (Desk, Monitor, Keyboard, Mouse, Chair, CPU)
+- 🎨 Tailwind CSS for responsive layout
+- 🎥 Smooth animation using Framer Motion and `useFrame`
 
-## Expanding the ESLint configuration
+## 🖼️ Preview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Preview Screenshot](./preview.png) <!-- Replace with actual preview if available -->
+
+## 🛠️ Tech Stack
+
+- [React](https://reactjs.org/)
+- [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber)
+- [@react-three/drei](https://github.com/pmndrs/drei)
+- [Three.js](https://threejs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/3d-computer-setup.git
+cd 3d-computer-setup
