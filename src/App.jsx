@@ -61,7 +61,7 @@ const App = () => {
     <Canvas
       shadows
       camera={{ position: [0, 0, 5], fov: 45}}
-      className='min-h-screen'
+      className='absolute inset-0'
     >
       <Scene />
     </Canvas>
