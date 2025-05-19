@@ -1,32 +1,30 @@
 # 🖥️ 3D Computer Setup
 
-A responsive and interactive 3D computer setup scene built using **React Three Fiber**, **Three.js**, and **Tailwind CSS**. This project visually represents a computer desk environment with a monitor, keyboard, mouse, CPU, and chair.
+An interactive 3D computer desk scene built with **React Three Fiber**, **Three.js**, and **Tailwind CSS**. This project visualizes a workspace with a monitor, CPU, mouse, keyboard, desk, and chair — all in 3D.
 
-## 🌟 Features
+---
 
-- 🎮 Interactive 3D scene with orbit controls
-- 🌆 Realistic lighting using HDRI environments
-- 💡 Dynamic shadows and lighting
-- 🧩 Modular components (Desk, Monitor, Keyboard, Mouse, Chair, CPU)
-- 🎨 Tailwind CSS for responsive layout
-- 🎥 Smooth animation using Framer Motion and `useFrame`
+## 🔮 Preview
 
-## 🖼️ Preview
+![Preview of 3D Computer Setup](./public/preview.png)
 
-![Preview Screenshot](./preview.png) <!-- Replace with actual preview if available -->
+> 📝 Tip: Replace `preview.png` with your own screenshot (see instructions below).
 
-## 🛠️ Tech Stack
+---
 
-- [React](https://reactjs.org/)
-- [@react-three/fiber](https://docs.pmnd.rs/react-three-fiber)
-- [@react-three/drei](https://github.com/pmndrs/drei)
-- [Three.js](https://threejs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
+## ✨ Features
+
+- 📦 Modular 3D components: Desk, Monitor, Keyboard, Mouse, CPU, Chair
+- 🎮 Interactive camera controls (OrbitControls)
+- 🌇 Realistic lighting via HDR environment
+- 📱 Responsive design with Tailwind CSS
+- 🌀 Subtle animations using Framer Motion
+
+---
 
 ## 🚀 Getting Started
 
-### 1. Clone the repository
+### 1. Clone the Repo
 
 ```bash
 git clone https://github.com/Mahadev422/computer-set.git
