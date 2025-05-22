@@ -74,7 +74,7 @@ const ComputerSetup3D = () => {
       camera={{ position: [0, 1, -5]}}
       className="absolute inset-0"
     >
-      <Html>
+      {/* <Html>
         <div className='absolute -top-[370px] right-[-300px] hidden'>
           <button onClick={() => setZoom(!zoom)} className={`text-3xl ${ !zoom ? 'bg-red-400' : 'bg-green-400'} cursor-pointer p-2 rounded-2xl m-1`}>
             <TbZoomCode />
@@ -83,7 +83,7 @@ const ComputerSetup3D = () => {
           className={`text-3xl ${rotation ? 'bg-red-400' : 'bg-green-400'} cursor-pointer p-2 rounded-2xl m-1`}>           <MdScreenRotationAlt /> 
           </button>
         </div>
-      </Html>
+      </Html> */}
       <Scene rotation={rotation} zoom={zoom} />
     </Canvas>
   </div>
