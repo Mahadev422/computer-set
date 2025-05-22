@@ -75,7 +75,7 @@ const ComputerSetup3D = () => {
       className="absolute inset-0"
     >
       <Html>
-        <div className='absolute -top-[370px] right-[-300px]'>
+        <div className='absolute -top-[370px] right-[-300px] hidden'>
           <button onClick={() => setZoom(!zoom)} className={`text-3xl ${ !zoom ? 'bg-red-400' : 'bg-green-400'} cursor-pointer p-2 rounded-2xl m-1`}>
             <TbZoomCode />
           </button>
