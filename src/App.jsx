@@ -1,9 +1,6 @@
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber';
-import { Suspense, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { OrbitControls, Environment, Html } from '@react-three/drei';
-import { TbZoomCode } from "react-icons/tb";
-import { MdScreenRotationAlt } from "react-icons/md";
-
 // Computer setup components with improved details
 import Desk from './components/Desk';
 import Chair from './components/Chair';
@@ -12,18 +9,35 @@ import Mouse from './components/Mouse';
 import Keyboard from './components/Keyboard';
 import Monitor from './components/Monitor';
 
+const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
 
-// Main scene component
-const Scene = ({ rotation, zoom }) => {
-
+const Scene = () => {
   const groupRef = useRef();
-  const { camera } = useThree();
+  const { camera, mouse, gl } = useThree();
+  const [hovered, setHovered] = useState(false);
 
-  // Add subtle animation
-  useFrame((state, delta) => {
-    if (groupRef.current && rotation) {
-      groupRef.current.rotation.y += delta*0.5;
-    }
+  // Handle pointer over/out to toggle reset mode
+  useEffect(() => {
+    const handleEnter = () => setHovered(true);
+    const handleLeave = () => setHovered(false);
+
+    gl.domElement.addEventListener('pointerenter', handleEnter);
+    gl.domElement.addEventListener('pointerleave', handleLeave);
+
+    return () => {
+      gl.domElement.removeEventListener('pointerenter', handleEnter);
+      gl.domElement.removeEventListener('pointerleave', handleLeave);
+    };
+  }, [gl]);
+
+  useFrame(() => {
+    if (!groupRef.current) return;
+
+    const targetY = hovered ? clamp(mouse.x, -0.4, 0.4) : 0;
+    const targetX = hovered ? clamp(mouse.y, -0.2, 0.2) : 0;
+
+    groupRef.current.rotation.y += (targetY - groupRef.current.rotation.y) * 0.1;
+    groupRef.current.rotation.x += (targetX - groupRef.current.rotation.x) * 0.1;
   });
 
   return (
@@ -36,21 +50,18 @@ const Scene = ({ rotation, zoom }) => {
         shadow-mapSize-height={2048}
       />
       <Environment preset="city" />
-      
-      <group position={[0,0,0]} ref={groupRef}>
+
+      <group position={[0, 0, 1]} ref={groupRef}>
         <Desk />
         <Monitor />
         <Keyboard />
         <Mouse />
-        <Suspense>
-          <Chair modelPath="/computer-set/models/chair.gltf" position={[0, -2, -2.2]} />
-        </Suspense>
+        <Chair modelPath="/computer-set/models/chair.gltf" position={[0, -2, -2.2]} />
         <Cpu />
       </group>
-      
+
       <OrbitControls 
-        enableZoom={ zoom ? true : false }
-        enablePan={true}
+        enableZoom={false}
         minPolarAngle={Math.PI / 6}
         maxPolarAngle={Math.PI / 2}
         camera={camera}
@@ -59,32 +70,18 @@ const Scene = ({ rotation, zoom }) => {
   );
 };
 
-// Main component
-const ComputerSetup3D = () => {
 
-  const [rotation, setRotation] = useState(true)
-  const [zoom, setZoom] = useState(false)
- 
+const ComputerSetup3D = () => {
 
   return (
   <div className="absolute inset-0">
     
     <Canvas 
       shadows
-      camera={{ position: [0, 1, -5]}}
+      camera={{ position: [0, 1, -4]}}
       className="absolute inset-0"
     >
-      {/* <Html>
-        <div className='absolute -top-[370px] right-[-300px] hidden'>
-          <button onClick={() => setZoom(!zoom)} className={`text-3xl ${ !zoom ? 'bg-red-400' : 'bg-green-400'} cursor-pointer p-2 rounded-2xl m-1`}>
-            <TbZoomCode />
-          </button>
-          <button onClick={() => setRotation(!rotation)}
-          className={`text-3xl ${rotation ? 'bg-red-400' : 'bg-green-400'} cursor-pointer p-2 rounded-2xl m-1`}>           <MdScreenRotationAlt /> 
-          </button>
-        </div>
-      </Html> */}
-      <Scene rotation={rotation} zoom={zoom} />
+      <Scene />
     </Canvas>
   </div>
   );

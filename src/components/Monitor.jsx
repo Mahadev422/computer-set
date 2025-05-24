@@ -13,6 +13,7 @@ const Monitor = () => {
   const screenTexture = useLoader(
     TextureLoader, '/computer-set/image.png'
   );
+  
   return (
     <group position={[0, 0, 0]}>
       {/* Monitor frame (black border) */}
@@ -30,9 +31,8 @@ const Monitor = () => {
           toneMapped={false}
         />
       </mesh>
-
       {/* Monitor stand */}
-      <group position={[0, -0.25, 0.1]}>
+      <group position={[0, -0.2, 0.1]}>
         <mesh>
           <cylinderGeometry args={[0.05, 0.1, 0.7, 8]} />
           <meshStandardMaterial color="#555555" />

@@ -3,7 +3,7 @@ import { Html } from "@react-three/drei";
 const Keyboard = () => {
  
   return (
-    <group position={[0, -0.4, -0.5]} rotation={[-0.1, 0, 0]}>
+    <group position={[0, -0.43, -0.5]}>
       {/* Keyboard base */}
       <mesh castShadow>
         <boxGeometry args={[1.2, 0.05, 0.4]} />
